@@ -1,0 +1,57 @@
+{
+  "micro-release" : [
+  {
+    "id" : "80c8562e-5689-4ef0-b1ff-64e5c3c762a5",
+    "site_id" : "cartoon-bubble-sunset-amanda-church",
+    "name":"Amanda Church",
+    "artist_website": "http://amandachurchart.com/"
+  },
+
+  {
+    "id" : "5b2ef8d3-c805-4288-9179-7e140678a5f6",
+    "site_id" : "tooth-and-nail-3-jr-souther",
+    "name":"James R Souther",
+    "artist_website":"http://www.jamesrsouthard.com/"
+  },
+
+  {
+    "id" : "aaba60c4-a43f-4c6b-9660-885377eb7663",
+    "site_id" : "empty-and-full-ming-hong",
+    "release_date" : "August 8, 2016",
+    "title" : "Ming Hong : Empty and Full",
+    "artist_name" : "Ming Hong",
+    "artist_website" : "http://www.mingyinghong.com/",
+    "about_text" : "This a pretty dang cool work. Lorem Ipsum blah.",
+    "blog_link" : "blog-this link",
+    "distro_options":[
+      {
+          "type" : "Digital Download",
+          "price" : "$5.00"
+      },
+      {
+          "type" : "Unframed Print 12X12",
+          "price" : "$20.00 + shipping"
+      },
+      {
+          "type" : "Framed Print 12X12",
+          "price" : "$45.00 + shipping"
+      },
+      {
+          "type" : "Artist-Managed Print",
+          "price" : "Available upon request"
+      },
+      {
+          "type" : "New Work Commision",
+          "price" : "Available upon request"
+      }
+    ]
+  }
+
+  ],
+
+  "major-release" : [
+    {
+
+    }
+  ]
+}

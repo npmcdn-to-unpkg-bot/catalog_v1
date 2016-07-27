@@ -1,0 +1,24 @@
+
+{% extends "templates/_artwork.html" %}
+{% import 'macros/_lopsem.html' as generator %}
+
+{% block content %}
+  <p>{{about_text}}</p>
+  <p>{{generator.lopsem()}}</p>
+  <p class="read-more"><a href="{{ blog_link }}" target="_new">Read more about {{artist_name}} on our blog</a></p>
+  <img src="/images/{{site_id}}.jpg" />
+
+  <table class="table-bordered">
+    {% for distro in distro_options %}
+    <tr>
+      <td>{{ distro.type }}</td>
+      <td>{{ distro.price }}</td>
+    </tr>
+    {% else %}
+    <tr>
+      <td>Available upon request</td>
+    </tr>
+    {% endfor %}
+
+  </table>
+{% endblock %}

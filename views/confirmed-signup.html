@@ -1,0 +1,16 @@
+{% extends "templates/_default.html" %}
+
+{% block content %}
+    <h1>
+      Thank You!
+    </h1>
+    <p>
+      Your request has been processed. We will reach out to you in the near future with the invite details.
+    </p>
+    <p>
+      Meanwhile, if you are interested in keeping up with all things infinte and industrious, sign up for our mailing list.
+    </p>
+
+    {% include "partials/_email_signup.html" ignore missing %}
+
+{% endblock %}
