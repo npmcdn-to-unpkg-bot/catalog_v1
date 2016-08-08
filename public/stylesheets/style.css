@@ -9,17 +9,17 @@ body {
 
 @font-face {
   font-family: 'Mechanic';
-  src:url('../fonts/Mechanical.otf') format('opentype');
+  src:url('/fonts/Mechanical.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'Title-Sans';
-  src:url('../fonts/AsimovWid.otf') format('opentype');
+  src:url('/fonts/AsimovWid.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'Body-Sans';
-  src:url('../fonts/AsimovNar.otf') format('opentype');
+  src:url('/fonts/AsimovNar.otf') format('opentype');
 }
 
 .top-nav{
@@ -28,11 +28,11 @@ body {
   font-size: 16px;
 }
 
-p{
-  font-family: "Mechanic", sans-serif;
-  font-size: 20px;
-  margin-top: 25px;
+.site_logo{
+  margin-top: 15px;
 }
+
+
 
 h1,h2,h3{
   font-family: "Title-Sans", sans-serif;
@@ -63,11 +63,6 @@ h3{
   padding-top: 10px;
 }
 
-.artist-listing{
-  margin-bottom: 25px;
-  font-size: 18px;
-}
-
 a:link, a:visited{
     color: #C71585;
 }
@@ -96,9 +91,12 @@ a:active {
     background-color: #f5f5f5;
   }
 
-  /*#mc_embed_signup{
-    max-width: 60%
-  }*/
+  p{
+    font-family: "Mechanic", sans-serif;
+    font-size: 19px;
+    line-height: 160%;
+    margin-top: 25px;
+  }
 
   h1{
     font-size: 30px;
@@ -112,13 +110,185 @@ a:active {
     background-color: #fff;
   }
 
-  /*#mc_embed_signup{
-    max-width: 100%
-  }*/
+  p{
+    font-family: "Mechanic", sans-serif;
+    font-size: 14px;
+    margin-top: 25px;
+  }
 
   h1{
     font-size: 25px;
     padding-top: 5px;
     color:#999;
   }
+}
+
+
+/*-------------------------*/
+.btn-infinite-default{
+  color: #C71585;
+  background-color: #fff;
+  font-family: "Mechanic", sans-serif;
+  font-size: 18px;
+  border: 1px solid #C71585;
+  margin-top: 5px;
+}
+
+.btn-infinite-default:hover{
+  background-color: #f5f5f5;
+}
+.btn-infinite-default:link,
+.btn-infinite-default:visited{
+  color: #C71585;
+}
+
+
+/*------------Signup form ------------------*/
+.signup-form-container{
+  margin-top: 30px;
+}
+/* request styling */
+#request_account_fields{
+  border:1px solid lightgrey;
+  padding: 7px;
+  padding-bottom: 20px;
+  font-family: "Body-Sans", sans-serif;
+  font-size: 1.3em;
+}
+
+
+
+
+/*------------Artist Page ------------------*/
+.artist-listing{
+  margin-bottom: 25px;
+  font-size: 18px;
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.featured-image{
+  border:solid 5px #000;
+  margin-top: 20px;
+}
+.purchase-options-bar{
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.purchase-options-bar p{
+  margin-top: 0px;
+  font-size: 18px;
+}
+
+/*----------PRICE MATRIX------------*/
+.price-matrix{
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-bottom: 50px;
+}
+.price-matrix h3{
+  margin-top: 5px;
+}
+
+.price-matrix table{
+  width:100%;
+  border-color: black;
+}
+
+@media only screen and (min-width: 768px) {
+
+  .price-matrix table td{
+    text-align: left;
+    padding:10px;
+    width:60%;
+    font-family: "Body-Sans", sans-serif;
+    font-size: 1.3em;
+  }
+
+  .price-matrix table td .price-info{
+    font-size: 0.8em;
+    color:grey;
+  }
+
+  .price-matrix em{
+    font-family: "Body-Sans", sans-serif;
+    font-size: 1.2em;
+    font-style: normal;
+  }
+
+  .price-matrix h3 {
+      font-size: 20px;
+      background-color: black;
+      color: white;
+      padding: 5px;
+      margin-bottom: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .price-matrix table td{
+    text-align: left;
+    padding:10px;
+    width:60%;
+    font-family: "Body-Sans", sans-serif;
+    font-size: 1.1em;
+  }
+
+  .price-matrix table td .price-info{
+    font-size: 0.7em;
+    color:grey;
+  }
+
+  .price-matrix em{
+    font-family: "Body-Sans", sans-serif;
+    font-size: 1.1em;
+    font-style: normal;
+  }
+
+  .price-matrix h3 {
+      font-size: 17px;
+      background-color: black;
+      color: white;
+      padding: 5px;
+      margin-bottom: 0px;
+  }
+}
+
+
+
+
+.price-matrix .table-bordered {
+    border: 2px solid #000;
+}
+
+.contact-us{
+  width:100%;
+}
+
+.price-matrix .btn{
+  color: #C71585;
+  background-color: #fff;
+  font-family: "Mechanic", sans-serif;
+  font-size: 18px;
+  border: 1px solid #C71585;
+  margin-top: 5px;
+}
+
+.price-matrix .btn:hover{
+  background-color: #f5f5f5;
+}
+.price-matrix .btn:link,
+.price-matrix .btn:visited{
+    color: #C71585;
+}
+
+.price-matrix .subtext{
+  padding-top: 5px;
+}
+
+
+.fa-info-circle{
+  padding-left: 10px;
 }

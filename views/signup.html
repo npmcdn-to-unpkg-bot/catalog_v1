@@ -1,13 +1,45 @@
 {% extends "templates/_default.html" %}
 
 {% block content %}
-    <p>
-      Please email us at <a href="mailto:info@infinite.industries">info[@t]infinite[d0t]industries</a> to request a login and password.
-    </p>
-    <form action="/request-account" method="POST">
-      <input type="text" placeholder="name" name="name" required>
-      <input type="text" placeholder="email" name="email" required>
-      <input type="text" placeholder="..." name="referral_source">
-      <button type="submit">Submit</button>
-    </form>
+
+  <p>To request an account, please provide the following information</p>
+
+    <div id="request_account_fields">
+      <div class="row signup-form-container">
+        <div class="col-sm-8 col-sm-offset-2">
+          <form role="form" class="text-left">
+            <div class="form-group">
+              <label for="user_name">Your Name (required):</label>
+              <input type="text" id ="user_name" placeholder="your name" v-model="account_request.user_name">
+            </div>
+            <div class="form-group">
+              <label for="user_email">Email address (required):</label>
+              <input type="text" id ="user_email" placeholder="some data about you" v-model="account_request.user_email">
+            </div>
+            <div class="form-group">
+              <label for="referral_source">Where did you hear about us? (optional):</label>
+             <input type="text" id= "referral_source" placeholder="..." name="referral_source" v-model="account_request.referral_source">
+           </div>
+           <div class="checkbox">
+              <label><input type="checkbox" id="email_signup" v-model="account_request.email_signup"> Would you like to recieve our newsletter? <br>(once or twice a month only)</label>
+
+          </div>
+          </form>
+        </div>
+      </div>
+      <button role="button" class="btn btn-default btn-infinite-default" v-on:click="sendData" v-bind:disabled="activeButton">Send Request</button>
+
+      <div v-show='message_to_user'>
+        success or falure message
+        <p>
+          For any additional questions, please email us at <a href="mailto:info@infinite.industries">info[@t]infinite[d0t]industries</a>.
+        </p>
+      </div>
+    </div>
+{% endblock %}
+
+{% block scripts_and_libraries %}
+  <script src="https://npmcdn.com/vue@latest/dist/vue.js"></script>
+  <script src="https://npmcdn.com/vue-resource@0.9.3/dist/vue-resource.min.js"></script>
+  <script src="/javascripts/request_account.js"></script>
 {% endblock %}

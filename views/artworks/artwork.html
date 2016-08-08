@@ -5,20 +5,30 @@
 {% block content %}
   <p>{{about_text}}</p>
   <p>{{generator.lopsem()}}</p>
-  <p class="read-more"><a href="{{ blog_link }}" target="_new">Read more about {{artist_name}} on our blog</a></p>
-  <img src="/images/{{site_id}}.jpg" />
+  <p class="read-more"><a href="{{ blog_link }}" target="_new">Read more about {{artist_name}}'s work on our blog</a></p>
 
-  <table class="table-bordered">
-    {% for distro in distro_options %}
-    <tr>
-      <td>{{ distro.type }}</td>
-      <td>{{ distro.price }}</td>
-    </tr>
-    {% else %}
-    <tr>
-      <td>Available upon request</td>
-    </tr>
-    {% endfor %}
+  <img src="/images/{{site_id}}.jpg" width="100%" class="featured-image"/>
 
-  </table>
+  <div class= "price-matrix">
+  <h3>Purchasing Options</h3>
+      <table class= "table-bordered">
+        {% for distro in distro_options %}
+        <tr>
+          <td>
+            {{ distro.type }}
+            <a href="#"><i class="fa fa-info-circle fa-1x" aria-hidden="true"></i></a>
+          </td>
+          <td>{{ distro.price }}</td>
+        </tr>
+        {% else %}
+        <tr>
+          <td>Available upon request</td>
+        </tr>
+        {% endfor %}
+      </table>
+      <a href="mailto:info@infinite.industries" role="button" class="btn btn-default contact-us">CONTACT US</a>
+      <div class="text-center subtext"><em>to place an order ...or just to chat about the work :)</em></div>
+  </div>
+
+
 {% endblock %}

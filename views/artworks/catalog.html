@@ -2,22 +2,23 @@
 
 {% block content %}
   <p>
-    We are slowly ramping up our release schedule. Currently trying to learn more about things you, the viewer, are interested in seeing from the site (all input welcome) and reaching out to artists we know and respect (check out #featuredartist series on our social media channels).
-  </p>
-  <p>
-    Please enjoy the micro-releases below. More great work coming soon!
+    We are slowly ramping up our release schedule. Currently trying to learn more about things you, the viewer, are interested
+    in seeing from the site (<a href="mailto:info@infinite.industries">all input welcome</a>) and reaching out to artists we know and respect (check out <a href="https://www.instagram.com/1nfinite_1ndustries/" target="_new">#featuredartist series</a> on our social media channels).
   </p>
 
-  <ul>
+  <p class="text-center">
+    Please enjoy the current releases.
+  </p>
+
+  <ul class="artist-listing text-center">
     {% for artwork in artwork_list["micro-release"] %}
-      <li>{{ artwork.id }}</li>
+      <li><a href="#">{{ artwork.title }}</a> <br /> *</li>
     {% else %}
       <li>Micro-releases of artwork coming soon.</li>
     {% endfor %}
   </ul>
+  <h3 class="text-center">
+      More great work coming soon!
+  </h3>
 
-  <p>
-    Feel free to ping us via email or social media regarding ideas, wishes and suggestions. To get the latest updates on artwork releases, please subscribe to our mailing list.
-  </p>
-  {% include "partials/_email_signup.html" ignore missing %}
 {% endblock %}
