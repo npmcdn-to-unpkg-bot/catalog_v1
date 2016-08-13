@@ -4,16 +4,20 @@ var sanitizer = require('sanitizer');
 var expressValidator = require('express-validator');
 var MongoClient = require('mongodb').MongoClient;
 var dateTime = require('date-time');
-
 var mailer = require('../services/mailer');
+var passport = require('passport');
+
+var env = {
+  AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID,
+  AUTH0_DOMAIN: process.env.AUTH0_DOMAIN,
+  AUTH0_CALLBACK_URL: process.env.AUTH0_CALLBACK_URL || 'http://localhost:3000/callback'
+};
 
 var router = express.Router();
 
-
-var env_params = {};
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'INFINITE.INDUSTRIES: Welcome' });
+  res.render('index', { title: 'INFINITE.INDUSTRIES: Welcome', env: env });
 });
 
 //----------------------------------
@@ -101,7 +105,7 @@ router.get('/failed-signup',
 //----------------------------------
 router.get('/login',
   function(req, res){
-    res.render('login', { env_params: env_params });
+    res.render('login', { env: env });
   });
 
 router.get('/logout',
@@ -113,6 +117,12 @@ router.get('/logout',
 router.get('/login-error',
   function(req, res){
     res.render('login-error',{ title: 'INFINITE.INDUSTRIES: Hmmmmm, something went wrong :(' });
+  });
+
+  router.get('/callback',
+  passport.authenticate('auth0', { failureRedirect: '/login-error' }),
+  function(req, res) {
+    res.redirect(req.session.returnTo || '/artworks/catalog');
   });
 
 module.exports = router;
