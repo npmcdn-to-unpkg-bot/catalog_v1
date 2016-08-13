@@ -156,6 +156,19 @@ a:active {
   font-size: 1.3em;
 }
 
+.invalid-border{
+    border-color: rgba(255, 0, 0, 0.8);
+    box-shadow: 0 1px 1px rgba(255, 0, 0, 0.075) inset, 0 0 8px rgba(255, 103, 23, 0.6);
+    outline: 0 none;
+
+}
+
+.valid-border{
+    border-color: rgba(0, 255, 0, 0.8);
+    box-shadow: 0 1px 1px rgba( 0, 255, 0, 0.075) inset, 0 0 8px rgba(255, 103, 23, 0.6);
+    outline: 0 none;
+
+}
 
 
 
