@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var dotenv = require('dotenv');
 var nunjucks = require('nunjucks');
 var expressValidator = require('express-validator');
+var rollbar = require('rollbar');
 
 dotenv.load();
 
@@ -38,6 +39,10 @@ app.use(expressValidator());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+if (process.env.ROLLBAR_TOKEN) {
+  rollbar.init(process.env.ROLLBAR_TOKEN, { environment: process.env.MODE });
+}
+
 app.use('/', routes);
 app.use('/users', users);
 app.use('/artworks', artworks);
@@ -56,6 +61,7 @@ app.use(function(req, res, next) {
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
+    rollbar.handleError(err);
     res.render('error', {
       message: err.message,
       error: err
@@ -67,6 +73,7 @@ if (app.get('env') === 'development') {
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
+  rollbar.handleError(err);
   res.render('error', {
     message: err.message,
     error: {}

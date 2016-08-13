@@ -58,6 +58,7 @@ router.post('/request-account',
       var account_request = {'subject':'Requesting an Account Invite','text':text_to_email};
       mailer.sendAdminEmail(account_request);
 
+      // rollbar.reportMessage("Hello, Dima!");
       // //log to database
       MongoClient.connect(process.env.LINK_TO_MONGO, function(err, database){
         if (err){
