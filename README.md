@@ -18,6 +18,7 @@ ADMIN_EMAIL= your@email.com
 LIVE_MAILGUN_API_KEY= YourMailgunAPIkey
 LIVE_MAILGUN_DOMAIN = your.mailgun.domain
 LINK_TO_MONGO= mongodb://<your_name>:<your_password>@ds042379.mlab.com:42379/your_db_name
+ROLLBAR_TOKEN=""
 ```
 5. npm start 
 
