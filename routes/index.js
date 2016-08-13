@@ -55,7 +55,12 @@ router.post('/request-account',
       if(req.body.email_signup){
         text_to_email=text_to_email + "\n This user needs to be added to the email list\n";
       }
-      var account_request = {'subject':'Requesting an Account Invite','text':text_to_email};
+      var account_request = {
+        'subject':'Requesting an Account Invite',
+        'text':text_to_email,
+        'contact_email': email,
+        'add_to_mailist': req.body.email_signup
+      };
       mailer.sendAdminEmail(account_request);
 
       // rollbar.reportMessage("Hello, Dima!");
