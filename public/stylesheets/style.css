@@ -305,3 +305,13 @@ a:active {
 .fa-info-circle{
   padding-left: 10px;
 }
+
+/*-------------TOP NAV ------------------*/
+
+.navbar-toggle{
+  border: 1px #C71585 solid;
+}
+
+.icon-bar{
+    border: 1px #C71585 solid;
+}

@@ -5,6 +5,27 @@
       Welcome to Infinite.Industries Catalog!
     </h1>
     <p>
-      Please <a href="#">log in</a> to check out the content.
+      Please <button role="button" onclick="signin()" class="btn btn-default btn-infinite-default">log in</button> to check out the content.
     </p>
+
+
+    <script>
+        var lock = new Auth0Lock('{{env.AUTH0_CLIENT_ID}}', '{{env.AUTH0_DOMAIN}}');
+        function signin() {
+          lock.show({
+              callbackURL: '{{env.AUTH0_CALLBACK_URL}}'
+            , signupLink: '/signup'
+            , responseType: 'code'
+            , authParams: {
+              scope: 'openid name email picture'
+            }
+            , dict: {
+                signin:{
+                  "signupText": "Request an Invite"
+                }
+            }
+          });
+        }
+      </script>
+
 {% endblock %}
