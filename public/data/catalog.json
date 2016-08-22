@@ -28,23 +28,43 @@
     "distro_options":[
       {
           "type" : "Digital Download",
-          "price" : "$5.00"
+          "price" : 5.00,
+          "shipping" : false,
+          "qtd" : false,
+          "addess" : false,
+          "fulfillment_method" : "email"
       },
       {
           "type" : "Unframed Print 12X12",
-          "price" : "$20.00 + shipping"
+          "price" : 20.00,
+          "shipping" : true,
+          "qtd" : true,
+          "addess" : true,
+          "fulfillment_method" : "email"
       },
       {
           "type" : "Framed Print 12X12",
-          "price" : "$45.00 + shipping"
+          "price" : 45.00 ,
+          "shipping" : true,
+          "qtd" : true,
+          "addess" : true,
+          "fulfillment_method" : "email"
       },
       {
           "type" : "Artist-Managed Print",
-          "price" : "Available upon request"
+          "price" : "Available upon request",
+          "shipping" : false,
+          "qtd" : false,
+          "addess" : false,
+          "fulfillment_method" : "email"
       },
       {
           "type" : "New Work Commision",
-          "price" : "Available upon request"
+          "price" : "Available upon request",
+          "shipping" : false,
+          "qtd" : false,
+          "addess" : false,
+          "fulfillment_method" : "email"
       }
     ]
   }
